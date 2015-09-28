@@ -18,4 +18,7 @@ There are currently <%= @users.length %> signed up.
 
 </div>
 
+
 <% end %>
+
+<%= button_to "Logout", sessions_path, method: :delete %>

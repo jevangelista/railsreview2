@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   get "/users/new", to: "users#new", as: "new_user"  
 
+  post "users", to: "users#create"
+
   get "/users/:id", to: "users#show", as: "user"
 
   get "/users/:id/edit", to: "users#edit", as: "edit_user"
-
-  post "users", to: "users#create"
 
   # The update route
   patch "/users/:id", to: "users#update" 
@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get "/sign_in", to: "sessions#new"  
 
   post "/sessions", to: "sessions#create"
+
+  delete "/sessions", to: "sessions#destroy"
 
   #articles routes
 
