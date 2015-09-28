@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "users#index"
+  root to: "sites#index"
 
   get "/users", to: "users#index", as: "users"
 
@@ -43,6 +43,15 @@ Rails.application.routes.draw do
 
   # the destroy route
   delete "/articles/:id", to: "articles#destroy" 
+
+  #sites routes
+
+  get "/", to: "sites#index"
+
+  get "/about", to: "sites#about"
+
+  get "/contact", to: "sites#contact"
+
   
 end
 
