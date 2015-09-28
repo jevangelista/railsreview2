@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
 	validates :password, presence: true
 	validates_confirmation_of :email, :password
 
+	has_many :articles
+
 end
