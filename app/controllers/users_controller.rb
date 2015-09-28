@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     login(@user) # <-- login the user
-    redirect_to "/users/#{@user.id}" # <-- go to show
+    redirect_to "/users/#{@user.id}" 
   end
 
    def show
@@ -33,15 +33,15 @@ class UsersController < ApplicationController
 
   def update
     user_id = params[:id]
-    user = User.find(Creature_id)
+    user = User.find(user_id)
 
     # get updated data
-    updated_attributes = params..require(:user).permit(:first_name, :last_name, :email, :password)
+    updated_attributes = params.require(:user).permit(:first_name, :last_name, :email, :password)
     # update the creature
     user.update_attributes(updated_attributes)
 
     #redirect to show
-    redirect_to "/users/#{user_id}"
+    redirect_to "/users/#{user.id}"  # <-- go to show
 end
 
 def destroy

@@ -1,2 +1,26 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<h1>Edit Articles</h1>
+
+
+<div>
+
+	
+	<%= form_for @article do |f| %>
+
+	<div>
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+  <div>
+    <%= f.text_field :content, placeholder: "Content" %>
+  </div>
+  <div>
+    <%= f.text_field :user_id, placeholder: "User ID" %>
+  </div>
+
+		<%= f.submit "Update Article" %>
+
+
+	</div>
+
+	<% end %>
+
+</div>

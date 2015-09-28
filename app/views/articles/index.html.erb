@@ -10,8 +10,11 @@ There are currently <%= @articles.length %> created.
 <% @articles.each do |article| %>
 	
 	<div>
-		Title: <%= article.title %> <br/>
-		Content: <%= article.content %>
+		Title: <%= article.title %> <br>
+		Content: <%= article.content %> <br>
+		Belongs to User: <%= article.user_id %>
+
+		<%= button_to "Delete", article, method: :delete %>
 	</div>
 	<br>
 
